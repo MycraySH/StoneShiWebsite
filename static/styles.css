@@ -191,11 +191,39 @@ main {
   text-transform: uppercase;
 }
 
-.hero-copy > .eyebrow {
-  color: var(--orange);
+.research-availability {
   max-width: 520px;
+  margin-top: 24px;
+  padding: 2px 16px 2px 0;
+  border-right: 3px solid var(--orange);
   text-align: right;
   letter-spacing: 0;
+}
+
+.research-availability p { margin: 0; }
+
+.availability-label {
+  color: var(--blue-dark);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.availability-term {
+  color: var(--ink);
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.availability-term span {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.availability-note {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .lead {
