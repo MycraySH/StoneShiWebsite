@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}Tong (Stone) Shi | CV{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Transportation engineering · GIS · Multi-agent simulation</p>
+    <h1 class="display-name">{{ profile.name }}</h1>
+    <p class="lead">{{ profile.summary }}</p>
+    <div class="contact-row">
+      <a href="mailto:{{ profile.email }}">{{ profile.email }}</a>
+      <span>{{ profile.phone }}</span>
+    </div>
+    <div class="button-row">
+      <a class="button primary" href="{{ url_for('static', filename='documents/research-cv.pdf') }}" download>Download research CV</a>
+      <a class="button secondary" href="{{ url_for('static', filename='documents/transportation-gis-resume.pdf') }}" download>Download transportation/GIS resume</a>
+    </div>
+  </div>
+  <aside class="profile-panel" aria-label="Profile">
+    <div class="portrait">
+      <img src="{{ url_for('static', filename='images/profile-photo.jpg') }}" alt="Portrait of Tong(Stone)Shi">
+    </div>
+    <h2>{{ profile.title }}</h2>
+    <p>UC Berkeley M.S. in Civil and Environmental Engineering; UCSB B.A. in GIS with architecture and urban history training.</p>
+    <div class="profile-links">
+      <a href="{{ profile.linkedin }}">LinkedIn</a>
+      <a href="{{ profile.github }}">GitHub</a>
+    </div>
+  </aside>
+</section>
+
+<section class="section-grid">
+  <div>
+    <p class="eyebrow">Selected work</p>
+    <h2>Research and applied mobility samples</h2>
+  </div>
+  <p>Each window opens a detail page with the project framing, methods, and paper-style preview notes.</p>
+</section>
+
+<section class="sample-grid" aria-label="Work samples">
+  {% for sample in work_samples %}
+  <a class="sample-card" href="{{ url_for('work_detail', slug=sample.slug) }}">
+    <span>{{ sample.tag }}</span>
+    <h3>{{ sample.title }}</h3>
+    <p>{{ sample.summary }}</p>
+    <small>{{ sample.period }}</small>
+  </a>
+  {% endfor %}
+</section>
+
+<section class="two-column">
+  <div>
+    <h2>Publications and presentations</h2>
+    <ul class="tight-list">
+      <li>Assessing Flight Network Dynamics and Emission Impacts of California's Intra-State Aviation.</li>
+      <li>Spatial Distribution Analysis of Aircraft Accident in Airport Safety Zones, FAA NEXTOR III.</li>
+      <li>Using street-view imagery to assess urban perception in daily mobility, AAG 2024.</li>
+      <li>Modeling the Milpa at Tikal, SAA 2023.</li>
+    </ul>
+  </div>
+  <div>
+    <h2>Core methods</h2>
+    <div class="skill-cloud">
+      <span>ArcGIS</span><span>QGIS</span><span>OSMnx</span><span>NetworkX</span><span>PyTorch</span><span>scikit-learn</span><span>MATSim</span><span>Python</span><span>R</span><span>SQL</span>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}{{ sample.title }} | Tong (Stone) Shi{% endblock %}
+{% block content %}
+<article class="detail">
+  <a class="back-link" href="{{ url_for('home') }}">Back to CV</a>
+  <p class="eyebrow">{{ sample.tag }} · {{ sample.period }}</p>
+  <h1>{{ sample.title }}</h1>
+  <p class="lead">{{ sample.summary }}</p>
+  <div class="paper-preview">
+    <section>
+      <h2>Paper Preview</h2>
+      <p>This preview summarizes the research question, technical approach, and applied transportation or geospatial value of the work sample.</p>
+      <ul>
+        {% for item in sample.details %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+    <aside>
+      <h2>Methods</h2>
+      <div class="skill-cloud">
+        {% for method in sample.methods %}
+        <span>{{ method }}</span>
+        {% endfor %}
+      </div>
+    </aside>
+  </div>
+</article>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Research Interest Proposal | Tong (Stone) Shi{% endblock %}
+{% block content %}
+<article class="document-page">
+  <p class="eyebrow">Research interest proposal</p>
+  <h1>Mobility Resilience, Environmental Justice, and Human-Centered Transportation AI</h1>
+  <p class="lead">A concise research agenda connecting transportation networks, GIS, environmental exposure, and multi-agent simulation.</p>
+  <div class="proposal-grid">
+    <section>
+      <h2>Research Direction</h2>
+      <p>My research interest focuses on how transportation systems behave under disruption and how their impacts are distributed across communities. I am especially interested in linking GIS, aviation and transit networks, environmental justice, and LLM-driven multi-agent simulation to evaluate decisions before they become real-world consequences.</p>
+    </section>
+    <section>
+      <h2>Core Questions</h2>
+      <ul>
+        <li>How do travelers adjust route, mode, timing, and destination choices when networks are disrupted?</li>
+        <li>How can airport and transit operations reduce unequal exposure to emissions, congestion, and safety risks?</li>
+        <li>How can LLM agents be benchmarked against traditional agent-based models for credible transportation planning?</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Methods</h2>
+      <p>The proposal combines spatial statistics, network science, geospatial machine learning, street-view perception modeling, emission exposure analysis, and large-scale agent simulation. Python, GIS, OSMnx, NetworkX, PyTorch, and MATSim-style workflows form the technical backbone.</p>
+    </section>
+    <section>
+      <h2>Expected Contribution</h2>
+      <p>This agenda aims to produce decision-support models for resilient multimodal systems, sustainable airport planning, and equitable infrastructure investment. The practical goal is to help agencies and researchers test policy alternatives with transparent assumptions and community-centered metrics.</p>
+    </section>
+  </div>
+  <div class="embed-panel">
+    <h2>Research statement PDF</h2>
+    <object data="{{ url_for('static', filename='documents/research-statement.pdf') }}" type="application/pdf">
+      <a href="{{ url_for('static', filename='documents/research-statement.pdf') }}">Open the research statement PDF</a>
+    </object>
+  </div>
+</article>
+{% endblock %}

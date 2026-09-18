@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}General Cover Letter | Tong (Stone) Shi{% endblock %}
+{% block content %}
+<article class="document-page">
+  <p class="eyebrow">General-use cover letter</p>
+  <h1>Cover Letter</h1>
+  <p class="lead">Adapted from the supplied cover-letter sample with firm-specific language removed.</p>
+  <div class="letter">
+    <p>Dear Hiring Committee,</p>
+    <p>I am writing to express my interest in transportation, GIS, planning, and data-driven mobility roles where I can apply my background in geospatial analysis, airport systems, multimodal transportation, and AI-assisted modeling. My graduate training at UC Berkeley and research experience across aviation, urban mobility, hydrology, and archaeological GIS have prepared me to work across technical analysis, project coordination, and product-facing communication.</p>
+    <p>At UC Berkeley, I studied transportation engineering and led research on California airport emissions, aircraft accident distributions in airport safety zones, and urban perception in cycling mobility. These projects required rigorous GIS workflows, data cleaning, spatial statistics, machine-learning support, and clear visual communication for technical and policy audiences. I also contribute to OASIS-based LLM multi-agent transportation simulation, where I model passenger decisions under network disruptions and connect demographic, congestion, and routing data into large-scale mobility experiments.</p>
+    <p>In product and startup work, I have translated location intelligence into practical systems, including a GIS-driven dating-location search system, POI recommendation workflows, and prompt-engineered agent experiences. These roles strengthened my ability to define user needs, coordinate teams, and turn complex spatial data into tools that support decisions.</p>
+    <p>I would bring strong GIS judgment, transportation-domain knowledge, Python-based analysis skills, and an interdisciplinary research perspective to your team. I would welcome the opportunity to discuss how my background can support your planning, analytics, product, or infrastructure work.</p>
+    <p>Sincerely,<br>Tong (Stone) Shi</p>
+  </div>
+  <div class="embed-panel">
+    <h2>Original reference PDF</h2>
+    <object data="{{ url_for('static', filename='documents/source-cover-letter-ferrovial.pdf') }}" type="application/pdf">
+      <a href="{{ url_for('static', filename='documents/source-cover-letter-ferrovial.pdf') }}">Open the source cover-letter PDF</a>
+    </object>
+  </div>
+</article>
+{% endblock %}

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Tong (Stone) Shi{% endblock %}</title>
+    <meta name="description" content="CV homepage for Tong (Stone) Shi, transportation engineering, GIS, and multi-agent mobility research.">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand name-mark" href="{{ url_for('home') }}">Tong(Stone)Shi</a>
+      <nav aria-label="Primary navigation">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="/cv">CV</a>
+        <a href="{{ url_for('cover_letter') }}">Cover Letter</a>
+        <a href="{{ url_for('research_proposal') }}">Research Proposal</a>
+      </nav>
+    </header>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+    <footer class="site-footer">
+      <span>{{ profile.email }}</span>
+      <span>{{ profile.phone }}</span>
+      <a href="{{ profile.linkedin }}">LinkedIn</a>
+      <a href="{{ profile.github }}">OASIS</a>
+    </footer>
+  </body>
+</html>
