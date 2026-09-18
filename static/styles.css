@@ -146,8 +146,7 @@ main {
 
 .cv-intro {
   margin: 48px 0 24px;
-  padding: 0 0 0 20px;
-  border-left: 3px solid var(--blue);
+  padding: 0;
 }
 
 .cv-intro h2 {
@@ -160,7 +159,7 @@ main {
 }
 
 .cv-intro h2 span {
-  color: var(--blue-dark);
+  color: var(--ink);
   font-weight: 700;
 }
 
@@ -837,7 +836,7 @@ object {
 
   .cv-intro {
     margin-top: 36px;
-    padding-left: 14px;
+    padding-left: 0;
   }
 
   .cv-intro h2 {
