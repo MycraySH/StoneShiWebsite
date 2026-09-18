@@ -135,13 +135,13 @@ main {
 
 .hero {
   position: relative;
-  min-height: max(620px, calc(100vh - 220px));
+  min-height: 580px;
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
   align-items: center;
   gap: 34px;
   border-bottom: 1px solid var(--line);
-  padding: 76px 0 70px;
+  padding: 40px 0;
 }
 
 .cv-intro {
@@ -203,6 +203,10 @@ main {
 
 .hero-copy > .lead {
   color: var(--blue-dark);
+  max-width: 520px;
+  font-size: 18px;
+  line-height: 1.65;
+  margin: 24px 0 0;
 }
 
 .contact-row,
@@ -261,7 +265,7 @@ main {
 }
 
 .portrait {
-  width: min(100%, 310px);
+  width: min(100%, 220px);
   aspect-ratio: 4 / 5;
   margin-bottom: 20px;
   border: 0;
@@ -284,13 +288,112 @@ main {
 }
 
 .profile-links {
-  padding-top: 18px;
+  padding-top: 12px;
+  margin-top: 14px;
   border-top: 1px solid rgba(18, 53, 141, 0.2);
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
 }
 
 .profile-links a {
   color: var(--blue-dark);
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  overflow-wrap: anywhere;
+}
+
+.profile-links img {
+  flex: 0 0 20px;
+}
+
+.profile-links small {
+  display: block;
+  font-weight: 400;
+}
+
+.hero-copy .identity-heading {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 24px 0 28px;
+  letter-spacing: 0;
+}
+
+.identity-line {
+  display: block;
+  margin-top: 14px;
+}
+
+.identity-name {
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.preferred-name {
+  font-size: 48px;
+  color: var(--ink);
+}
+
+.identity-label {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.profile-education {
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 12px 0;
+}
+
+.mother-tongue strong {
+  font-size: 28px;
+  white-space: nowrap;
+}
+
+.typed-character {
+  visibility: hidden;
+  position: relative;
+}
+
+.typed-character.is-typed {
+  visibility: visible;
+}
+
+.typing-cursor::after,
+.typing-complete .mother-tongue::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 1em;
+  background: var(--orange);
+  animation: cursor-blink 850ms step-end infinite;
+}
+
+.typing-cursor::after {
+  left: 100%;
+  top: 0.1em;
+}
+
+.typing-complete .mother-tongue::after {
+  position: relative;
+  display: inline-block;
+  margin-left: 4px;
+  vertical-align: -0.1em;
+}
+
+@keyframes cursor-blink {
+  50% { opacity: 0; }
+}
+
+@media (max-width: 480px) {
+  .identity-name { font-size: 48px; }
+  .preferred-name { font-size: 40px; }
 }
 
 .profile-panel h2,

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tong(Stone)Shi | CV</title>
     <meta name="description" content="CV homepage for Tong (Stone) Shi, transportation engineering, GIS, and multi-agent mobility research.">
-    <link rel="stylesheet" href="/StoneShiWebsite/static/styles.css?v=blue17">
+    <link rel="stylesheet" href="/StoneShiWebsite/static/styles.css?v=names19">
   </head>
   <body>
     <header class="site-header">
@@ -16,8 +16,12 @@
 <section class="hero">
   <div class="hero-copy">
     <p class="eyebrow">Transportation engineering · GIS · Multi-agent simulation</p>
-    <h1 class="display-name">Tong(Stone)Shi</h1>
-    <p class="lead">I build GIS-centered transportation models, airport sustainability analyses, and LLM multi-agent simulations for mobility systems under stress.</p>
+    <h1 class="identity-heading" aria-label="Tong Shi. I go by Stone Shi. My Chinese name is 史桐.">
+      <span class="identity-line" aria-hidden="true"><span class="identity-name" data-type>Tong Shi</span></span>
+      <span class="identity-line" aria-hidden="true"><span class="identity-label" data-type>I go by </span><strong class="identity-name preferred-name" data-type>Stone Shi</strong></span>
+      <span class="identity-line mother-tongue" aria-hidden="true"><span data-type>My Chinese name is </span><strong lang="zh" data-type>史桐</strong></span>
+    </h1>
+    <p class="lead">I study mobility, accessibility, and travel behavior through GIS, airport sustainability research, and multi-agent simulation.</p>
     <div class="button-row">
       <a class="button primary" href="/StoneShiWebsite/static/documents/research-cv.pdf" download>Download research CV</a>
       <a class="button secondary" href="/StoneShiWebsite/static/documents/transportation-gis-resume.pdf" download>Download transportation/GIS resume</a>
@@ -27,12 +31,12 @@
     <div class="portrait">
       <img src="/StoneShiWebsite/static/images/profile-photo.jpg" alt="Portrait of Tong(Stone)Shi">
     </div>
-    <p>UC Berkeley M.S. in Civil and Environmental Engineering; UCSB B.A. in GIS with architecture and urban history training.</p>
+    <p class="profile-education"><strong>UC Berkeley</strong> M.S., Transportation Engineering<br><strong>UC Santa Barbara</strong> B.A., GIS</p>
     <div class="profile-links">
-      <a href="mailto:tongshi@berkeley.edu">tongshi@berkeley.edu</a>
-      <a href="tel:+18052806424">(+1) 805-280-6424</a>
-      <a href="https://linkedin.com/in/stoneshiucb">LinkedIn</a>
-      <a href="https://github.com/camel-ai/oasis">GitHub</a>
+      <a href="mailto:tongshi@berkeley.edu"><img src="/StoneShiWebsite/static/icons/envelope.svg" alt="" width="20" height="20"><span>tongshi@berkeley.edu</span></a>
+      <a href="tel:+18052806424"><img src="/StoneShiWebsite/static/icons/telephone.svg" alt="" width="20" height="20"><span>Phone <small>(+1) 805-280-6424</small></span></a>
+      <a href="https://linkedin.com/in/stoneshiucb"><img src="/StoneShiWebsite/static/icons/linkedin.svg" alt="" width="20" height="20"><span>LinkedIn</span></a>
+      <a href="https://github.com/camel-ai/oasis"><img src="/StoneShiWebsite/static/icons/github.svg" alt="" width="20" height="20"><span>GitHub</span></a>
     </div>
   </aside>
 </section>
@@ -307,6 +311,34 @@
         });
       }, { threshold: 0.08, rootMargin: "0px 0px -40px" });
       revealItems.forEach((item) => revealObserver.observe(item));
+
+      const identity = document.querySelector(".identity-heading");
+      if (identity && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        const characters = [];
+        identity.querySelectorAll("[data-type]").forEach((part) => {
+          const text = part.textContent;
+          part.textContent = "";
+          for (const character of Array.from(text)) {
+            const span = document.createElement("span");
+            span.className = "typed-character";
+            span.textContent = character;
+            part.appendChild(span);
+            characters.push(span);
+          }
+        });
+        let index = 0;
+        const typeNext = () => {
+          if (index > 0) characters[index - 1].classList.remove("typing-cursor");
+          if (index < characters.length) {
+            characters[index].classList.add("is-typed", "typing-cursor");
+            index += 1;
+            window.setTimeout(typeNext, 45);
+          } else {
+            identity.classList.add("typing-complete");
+          }
+        };
+        typeNext();
+      }
     </script>
   </body>
 </html>

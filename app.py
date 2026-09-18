@@ -127,7 +127,7 @@ def base(title, body):
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{escape(title)}</title>
     <meta name="description" content="CV homepage for Tong (Stone) Shi, transportation engineering, GIS, and multi-agent mobility research.">
-    <link rel="stylesheet" href="/static/styles.css?v=blue17">
+    <link rel="stylesheet" href="/static/styles.css?v=names19">
   </head>
   <body>
     <header class="site-header">
@@ -154,6 +154,34 @@ def base(title, body):
         }});
       }}, {{ threshold: 0.08, rootMargin: "0px 0px -40px" }});
       revealItems.forEach((item) => revealObserver.observe(item));
+
+      const identity = document.querySelector(".identity-heading");
+      if (identity && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {{
+        const characters = [];
+        identity.querySelectorAll("[data-type]").forEach((part) => {{
+          const text = part.textContent;
+          part.textContent = "";
+          for (const character of Array.from(text)) {{
+            const span = document.createElement("span");
+            span.className = "typed-character";
+            span.textContent = character;
+            part.appendChild(span);
+            characters.push(span);
+          }}
+        }});
+        let index = 0;
+        const typeNext = () => {{
+          if (index > 0) characters[index - 1].classList.remove("typing-cursor");
+          if (index < characters.length) {{
+            characters[index].classList.add("is-typed", "typing-cursor");
+            index += 1;
+            window.setTimeout(typeNext, 45);
+          }} else {{
+            identity.classList.add("typing-complete");
+          }}
+        }};
+        typeNext();
+      }}
     </script>
   </body>
 </html>"""
@@ -183,8 +211,12 @@ def cv_page():
 <section class="hero">
   <div class="hero-copy">
     <p class="eyebrow">Transportation engineering · GIS · Multi-agent simulation</p>
-    <h1 class="display-name">{PROFILE['name']}</h1>
-    <p class="lead">{PROFILE['summary']}</p>
+    <h1 class="identity-heading" aria-label="Tong Shi. I go by Stone Shi. My Chinese name is 史桐.">
+      <span class="identity-line" aria-hidden="true"><span class="identity-name" data-type>Tong Shi</span></span>
+      <span class="identity-line" aria-hidden="true"><span class="identity-label" data-type>I go by </span><strong class="identity-name preferred-name" data-type>Stone Shi</strong></span>
+      <span class="identity-line mother-tongue" aria-hidden="true"><span data-type>My Chinese name is </span><strong lang="zh" data-type>史桐</strong></span>
+    </h1>
+    <p class="lead">I study mobility, accessibility, and travel behavior through GIS, airport sustainability research, and multi-agent simulation.</p>
     <div class="button-row">
       <a class="button primary" href="/static/documents/research-cv.pdf" download>Download research CV</a>
       <a class="button secondary" href="/static/documents/transportation-gis-resume.pdf" download>Download transportation/GIS resume</a>
@@ -194,12 +226,12 @@ def cv_page():
     <div class="portrait">
       <img src="/static/images/profile-photo.jpg" alt="Portrait of Tong(Stone)Shi">
     </div>
-    <p>UC Berkeley M.S. in Civil and Environmental Engineering; UCSB B.A. in GIS with architecture and urban history training.</p>
+    <p class="profile-education"><strong>UC Berkeley</strong> M.S., Transportation Engineering<br><strong>UC Santa Barbara</strong> B.A., GIS</p>
     <div class="profile-links">
-      {link(PROFILE["email"], f"mailto:{PROFILE['email']}")}
-      {link(PROFILE["phone"], "tel:+18052806424")}
-      {link("LinkedIn", PROFILE["linkedin"])}
-      {link("GitHub", PROFILE["github"])}
+      <a href="mailto:{PROFILE['email']}"><img src="/static/icons/envelope.svg" alt="" width="20" height="20"><span>{PROFILE['email']}</span></a>
+      <a href="tel:+18052806424"><img src="/static/icons/telephone.svg" alt="" width="20" height="20"><span>Phone <small>{PROFILE['phone']}</small></span></a>
+      <a href="{PROFILE['linkedin']}"><img src="/static/icons/linkedin.svg" alt="" width="20" height="20"><span>LinkedIn</span></a>
+      <a href="{PROFILE['github']}"><img src="/static/icons/github.svg" alt="" width="20" height="20"><span>GitHub</span></a>
     </div>
   </aside>
 </section>

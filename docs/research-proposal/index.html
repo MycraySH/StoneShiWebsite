@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Research Interest Proposal | Tong (Stone) Shi</title>
     <meta name="description" content="CV homepage for Tong (Stone) Shi, transportation engineering, GIS, and multi-agent mobility research.">
-    <link rel="stylesheet" href="/StoneShiWebsite/static/styles.css?v=blue17">
+    <link rel="stylesheet" href="/StoneShiWebsite/static/styles.css?v=names19">
   </head>
   <body>
     <header class="site-header">
@@ -65,6 +65,34 @@
         });
       }, { threshold: 0.08, rootMargin: "0px 0px -40px" });
       revealItems.forEach((item) => revealObserver.observe(item));
+
+      const identity = document.querySelector(".identity-heading");
+      if (identity && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        const characters = [];
+        identity.querySelectorAll("[data-type]").forEach((part) => {
+          const text = part.textContent;
+          part.textContent = "";
+          for (const character of Array.from(text)) {
+            const span = document.createElement("span");
+            span.className = "typed-character";
+            span.textContent = character;
+            part.appendChild(span);
+            characters.push(span);
+          }
+        });
+        let index = 0;
+        const typeNext = () => {
+          if (index > 0) characters[index - 1].classList.remove("typing-cursor");
+          if (index < characters.length) {
+            characters[index].classList.add("is-typed", "typing-cursor");
+            index += 1;
+            window.setTimeout(typeNext, 45);
+          } else {
+            identity.classList.add("typing-complete");
+          }
+        };
+        typeNext();
+      }
     </script>
   </body>
 </html>
