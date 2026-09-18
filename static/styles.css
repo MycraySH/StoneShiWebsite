@@ -321,10 +321,13 @@ main {
   line-height: 1.6;
   margin: 24px 0 28px;
   letter-spacing: 0;
+  max-width: 520px;
+  text-align: right;
 }
 
 .identity-line {
   display: block;
+  position: relative;
   margin-top: 14px;
 }
 
@@ -381,10 +384,9 @@ main {
 }
 
 .typing-complete .mother-tongue::after {
-  position: relative;
-  display: inline-block;
-  margin-left: 4px;
-  vertical-align: -0.1em;
+  position: absolute;
+  right: -6px;
+  bottom: 0.35em;
 }
 
 @keyframes cursor-blink {
