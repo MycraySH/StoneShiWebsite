@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Research Interest Proposal | Tong (Stone) Shi</title>
+    <meta name="description" content="CV homepage for Tong (Stone) Shi, transportation engineering, GIS, and multi-agent mobility research.">
+    <link rel="stylesheet" href="/StoneShiWebsite/static/styles.css?v=blue17">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand name-mark" href="/StoneShiWebsite/">Tong(Stone)Shi</a>
+      <nav aria-label="Primary navigation"><a href="/StoneShiWebsite/">CV</a> <a href="/StoneShiWebsite/cover-letter/">Cover Letter</a> <a href="/StoneShiWebsite/research-proposal/">Research Proposal</a></nav>
+    </header>
+    <main>
+<article class="document-page">
+  <p class="eyebrow">Research interest proposal</p>
+  <h1>Mobility Resilience, Environmental Justice, and Human-Centered Transportation AI</h1>
+  <p class="lead">A concise research agenda connecting transportation networks, GIS, environmental exposure, and multi-agent simulation.</p>
+  <div class="proposal-grid">
+    <section>
+      <h2>Research Direction</h2>
+      <p>My research interest focuses on how transportation systems behave under disruption and how their impacts are distributed across communities. I am especially interested in linking GIS, aviation and transit networks, environmental justice, and LLM-driven multi-agent simulation to evaluate decisions before they become real-world consequences.</p>
+    </section>
+    <section>
+      <h2>Core Questions</h2>
+      <ul>
+        <li>How do travelers adjust route, mode, timing, and destination choices when networks are disrupted?</li>
+        <li>How can airport and transit operations reduce unequal exposure to emissions, congestion, and safety risks?</li>
+        <li>How can LLM agents be benchmarked against traditional agent-based models for credible transportation planning?</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Methods</h2>
+      <p>The proposal combines spatial statistics, network science, geospatial machine learning, street-view perception modeling, emission exposure analysis, and large-scale agent simulation. Python, GIS, OSMnx, NetworkX, PyTorch, and MATSim-style workflows form the technical backbone.</p>
+    </section>
+    <section>
+      <h2>Expected Contribution</h2>
+      <p>This agenda aims to produce decision-support models for resilient multimodal systems, sustainable airport planning, and equitable infrastructure investment. The practical goal is to help agencies and researchers test policy alternatives with transparent assumptions and community-centered metrics.</p>
+    </section>
+  </div>
+  <div class="embed-panel">
+    <h2>Research statement PDF</h2>
+    <object data="/StoneShiWebsite/static/documents/research-statement.pdf" type="application/pdf">
+      <a href="/StoneShiWebsite/static/documents/research-statement.pdf">Open the research statement PDF</a>
+    </object>
+  </div>
+</article></main>
+    <footer class="site-footer"><span>tongshi@berkeley.edu</span><span>(+1) 805-280-6424</span><a href="https://linkedin.com/in/stoneshiucb">LinkedIn</a><a href="https://github.com/camel-ai/oasis">OASIS</a></footer>
+    <script>
+      const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
+      document.querySelectorAll("nav a").forEach((item) => {
+        const itemPath = new URL(item.href).pathname.replace(/\/$/, "") || "/";
+        if (itemPath === currentPath) item.setAttribute("aria-current", "page");
+      });
+
+      const revealItems = document.querySelectorAll("main > section, .sample-card");
+      revealItems.forEach((item) => item.classList.add("reveal-target"));
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: "0px 0px -40px" });
+      revealItems.forEach((item) => revealObserver.observe(item));
+    </script>
+  </body>
+</html>

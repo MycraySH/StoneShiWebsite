@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Page not found</title>
+    <meta name="description" content="CV homepage for Tong (Stone) Shi, transportation engineering, GIS, and multi-agent mobility research.">
+    <link rel="stylesheet" href="/StoneShiWebsite/static/styles.css?v=blue17">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand name-mark" href="/StoneShiWebsite/">Tong(Stone)Shi</a>
+      <nav aria-label="Primary navigation"><a href="/StoneShiWebsite/">CV</a> <a href="/StoneShiWebsite/cover-letter/">Cover Letter</a> <a href="/StoneShiWebsite/research-proposal/">Research Proposal</a></nav>
+    </header>
+    <main><h1>Page not found</h1><a href="/StoneShiWebsite/">Back to CV</a></main>
+    <footer class="site-footer"><span>tongshi@berkeley.edu</span><span>(+1) 805-280-6424</span><a href="https://linkedin.com/in/stoneshiucb">LinkedIn</a><a href="https://github.com/camel-ai/oasis">OASIS</a></footer>
+    <script>
+      const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
+      document.querySelectorAll("nav a").forEach((item) => {
+        const itemPath = new URL(item.href).pathname.replace(/\/$/, "") || "/";
+        if (itemPath === currentPath) item.setAttribute("aria-current", "page");
+      });
+
+      const revealItems = document.querySelectorAll("main > section, .sample-card");
+      revealItems.forEach((item) => item.classList.add("reveal-target"));
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: "0px 0px -40px" });
+      revealItems.forEach((item) => revealObserver.observe(item));
+    </script>
+  </body>
+</html>

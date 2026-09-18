@@ -10,6 +10,19 @@ python app.py
 
 Then open `http://127.0.0.1:8000`.
 
+## Public website
+
+https://mycraysh.github.io/StoneShiWebsite/
+
+The public site is generated from the same Python page functions:
+
+```bash
+python build_site.py
+```
+
+Commit the updated `docs/` output along with source changes. GitHub Pages
+publishes the `docs/` folder on the `main` branch.
+
 ## Pages
 
 - `/` - CV homepage, profile, PDF downloads, and work samples.

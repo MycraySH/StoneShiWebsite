@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>General Cover Letter | Tong (Stone) Shi</title>
+    <meta name="description" content="CV homepage for Tong (Stone) Shi, transportation engineering, GIS, and multi-agent mobility research.">
+    <link rel="stylesheet" href="/StoneShiWebsite/static/styles.css?v=blue17">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand name-mark" href="/StoneShiWebsite/">Tong(Stone)Shi</a>
+      <nav aria-label="Primary navigation"><a href="/StoneShiWebsite/">CV</a> <a href="/StoneShiWebsite/cover-letter/">Cover Letter</a> <a href="/StoneShiWebsite/research-proposal/">Research Proposal</a></nav>
+    </header>
+    <main>
+<article class="document-page">
+  <p class="eyebrow">General-use cover letter</p>
+  <h1>Cover Letter</h1>
+  <p class="lead">Adapted from the supplied cover-letter sample with firm-specific language removed.</p>
+  <div class="letter">
+    <p>Dear Hiring Committee,</p>
+    <p>I am writing to express my interest in transportation, GIS, planning, and data-driven mobility roles where I can apply my background in geospatial analysis, airport systems, multimodal transportation, and AI-assisted modeling. My graduate training at UC Berkeley and research experience across aviation, urban mobility, hydrology, and archaeological GIS have prepared me to work across technical analysis, project coordination, and product-facing communication.</p>
+    <p>At UC Berkeley, I studied transportation engineering and led research on California airport emissions, aircraft accident distributions in airport safety zones, and urban perception in cycling mobility. These projects required rigorous GIS workflows, data cleaning, spatial statistics, machine-learning support, and clear visual communication for technical and policy audiences. I also contribute to OASIS-based LLM multi-agent transportation simulation, where I model passenger decisions under network disruptions and connect demographic, congestion, and routing data into large-scale mobility experiments.</p>
+    <p>In product and startup work, I have translated location intelligence into practical systems, including a GIS-driven dating-location search system, POI recommendation workflows, and prompt-engineered agent experiences. These roles strengthened my ability to define user needs, coordinate teams, and turn complex spatial data into tools that support decisions.</p>
+    <p>I would bring strong GIS judgment, transportation-domain knowledge, Python-based analysis skills, and an interdisciplinary research perspective to your team. I would welcome the opportunity to discuss how my background can support your planning, analytics, product, or infrastructure work.</p>
+    <p>Sincerely,<br>Tong (Stone) Shi</p>
+  </div>
+  <div class="embed-panel">
+    <h2>Original reference PDF</h2>
+    <object data="/StoneShiWebsite/static/documents/source-cover-letter-ferrovial.pdf" type="application/pdf">
+      <a href="/StoneShiWebsite/static/documents/source-cover-letter-ferrovial.pdf">Open the source cover-letter PDF</a>
+    </object>
+  </div>
+</article></main>
+    <footer class="site-footer"><span>tongshi@berkeley.edu</span><span>(+1) 805-280-6424</span><a href="https://linkedin.com/in/stoneshiucb">LinkedIn</a><a href="https://github.com/camel-ai/oasis">OASIS</a></footer>
+    <script>
+      const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
+      document.querySelectorAll("nav a").forEach((item) => {
+        const itemPath = new URL(item.href).pathname.replace(/\/$/, "") || "/";
+        if (itemPath === currentPath) item.setAttribute("aria-current", "page");
+      });
+
+      const revealItems = document.querySelectorAll("main > section, .sample-card");
+      revealItems.forEach((item) => item.classList.add("reveal-target"));
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: "0px 0px -40px" });
+      revealItems.forEach((item) => revealObserver.observe(item));
+    </script>
+  </body>
+</html>

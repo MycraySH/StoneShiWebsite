@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Modeling Transit Decisions Under Network Disruptions | Tong (Stone) Shi</title>
+    <meta name="description" content="CV homepage for Tong (Stone) Shi, transportation engineering, GIS, and multi-agent mobility research.">
+    <link rel="stylesheet" href="/StoneShiWebsite/static/styles.css?v=blue17">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand name-mark" href="/StoneShiWebsite/">Tong(Stone)Shi</a>
+      <nav aria-label="Primary navigation"><a href="/StoneShiWebsite/">CV</a> <a href="/StoneShiWebsite/cover-letter/">Cover Letter</a> <a href="/StoneShiWebsite/research-proposal/">Research Proposal</a></nav>
+    </header>
+    <main>
+<article class="detail">
+  <a class="back-link" href="/StoneShiWebsite/cv/">Back to CV</a>
+  <p class="eyebrow">LLM multi-agent simulation · 2024 - ongoing</p>
+  <h1>Modeling Transit Decisions Under Network Disruptions</h1>
+  <p class="lead">A large-scale multi-agent transit simulator for testing how passengers and operators respond to sudden rail and bus disruptions.</p>
+  <div class="paper-preview">
+    <section>
+      <h2>Paper Preview</h2>
+      <p>This preview summarizes the research question, technical approach, and applied transportation or geospatial value of the work sample.</p>
+      <ul><li>Built a million-agent simulation concept around realistic passenger decision-making, network disruptions, congestion, and multimodal alternatives.</li><li>Integrated GIS layers, Chicago demographic context, route-choice logic, and forecasting workflows using NetworkX, OSMnx, PyMATSim, and OASIS.</li><li>Designed coordination agents that adjust scheduling and assignments to reduce crowding and improve disruption resilience.</li></ul>
+    </section>
+    <aside>
+      <h2>Methods</h2>
+      <div class="skill-cloud"><span>Python</span><span>OASIS</span><span>NetworkX</span><span>OSMnx</span><span>PyMATSim</span><span>LLM agents</span></div>
+    </aside>
+  </div>
+</article></main>
+    <footer class="site-footer"><span>tongshi@berkeley.edu</span><span>(+1) 805-280-6424</span><a href="https://linkedin.com/in/stoneshiucb">LinkedIn</a><a href="https://github.com/camel-ai/oasis">OASIS</a></footer>
+    <script>
+      const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
+      document.querySelectorAll("nav a").forEach((item) => {
+        const itemPath = new URL(item.href).pathname.replace(/\/$/, "") || "/";
+        if (itemPath === currentPath) item.setAttribute("aria-current", "page");
+      });
+
+      const revealItems = document.querySelectorAll("main > section, .sample-card");
+      revealItems.forEach((item) => item.classList.add("reveal-target"));
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: "0px 0px -40px" });
+      revealItems.forEach((item) => revealObserver.observe(item));
+    </script>
+  </body>
+</html>
