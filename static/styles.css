@@ -193,6 +193,9 @@ main {
 
 .hero-copy > .eyebrow {
   color: var(--orange);
+  max-width: 520px;
+  text-align: right;
+  letter-spacing: 0;
 }
 
 .lead {
@@ -203,6 +206,7 @@ main {
 
 .hero-copy > .lead {
   color: var(--blue-dark);
+  text-align: right;
   max-width: 520px;
   font-size: 18px;
   line-height: 1.65;
