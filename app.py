@@ -240,8 +240,7 @@ def cv_page():
   </aside>
 </section>
 <section class="cv-intro">
-  <p class="eyebrow">Full curriculum vitae</p>
-  <h2>Research, education, and applied experience</h2>
+  <h2><span>Research, education,</span><br>and applied experience</h2>
 </section>
 {latex_cv_section()}
 <section class="section-grid single-column">
