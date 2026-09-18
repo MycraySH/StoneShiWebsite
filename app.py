@@ -217,9 +217,9 @@ def cv_page():
     </h1>
     <p class="lead">I study mobility, accessibility, and travel behavior through GIS, airport sustainability research, and multi-agent simulation.</p>
     <div class="research-availability">
-      <p class="availability-label">Looking for PhD opportunities</p>
+      <p class="availability-label">Looking for <strong class="opportunity-role">PhD</strong> opportunities</p>
       <p class="availability-term">Fall 2027<span> entry</span></p>
-      <p class="availability-note">Also open to research assistant roles aligned with my research.</p>
+      <p class="availability-note">Also open to <strong class="opportunity-role">Research Assistant</strong> roles<br>aligned with my research.</p>
     </div>
     <div class="button-row">
       <a class="button primary" href="/static/documents/research-cv.pdf" download>Download research CV</a>
