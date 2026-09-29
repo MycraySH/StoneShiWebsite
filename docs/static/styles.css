@@ -781,6 +781,19 @@ object {
   transition: opacity 620ms ease, transform 620ms ease;
 }
 
+.application-prose {
+  max-width: 800px;
+  margin: 42px auto 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+
+.application-prose section { margin-bottom: 30px; }
+.application-prose h2 { font-size: 1.45rem; line-height: 1.35; color: #111; }
+.application-prose p { margin: 0 0 20px; }
+.site-header nav { flex-wrap: wrap; }
+
 .reveal-target.is-visible {
   opacity: 1;
   transform: none;

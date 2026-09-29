@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Personal Statement | Tong (Stone) Shi</title>
+    <meta name="description" content="CV homepage for Tong (Stone) Shi, transportation engineering, GIS, and multi-agent mobility research.">
+    <link rel="stylesheet" href="/StoneShiWebsite/static/styles.css?v=fall2027">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand name-mark" href="/StoneShiWebsite/">Tong(Stone)Shi</a>
+      <nav aria-label="Primary navigation"><a href="/StoneShiWebsite/">CV</a> <a href="/StoneShiWebsite/cover-letter/">Cover Letter</a> <a href="/StoneShiWebsite/research-proposal/">Research Proposal</a> <a href="/StoneShiWebsite/statement-of-purpose/">Statement of Purpose</a> <a href="/StoneShiWebsite/personal-statement/">Personal Statement</a></nav>
+    </header>
+    <main><article class="document-page application-page">
+      <p class="eyebrow">Fall 2027 | Canadian PhD applications</p>
+      <h1>Personal Statement</h1>
+      <p class="lead">Learning to make opportunity usable</p>
+      <div class="button-row"><a class="button primary" href="/StoneShiWebsite/static/documents/Tong_Stone_Shi_Personal_Statement_Fall_2027.pdf" download>Download PDF</a><a class="button secondary" href="/StoneShiWebsite/cv/">View research CV</a></div>
+      <div class="application-prose"><section><p>For much of my education, the obstacle was knowing how to enter a world that others already understood. I grew up in a small town in China and became the first person in my family to earn a bachelor&#x27;s degree. When I began studying in the United States, I was learning an academic culture as well as a discipline: how to ask for guidance, approach research opportunities, and communicate an idea with confidence. Support from faculty and fellow students at UC Santa Barbara helped me find my footing. It also taught me that the existence of an opportunity and the ability to use it are different things.</p><p>As I gained confidence, I tried to make that transition easier for others. At UCSB&#x27;s MesoAmerican Research Center, I managed a nine-person GIS team and helped international undergraduates navigate research, academic writing, and professional communication. Our work required both technical coordination and patience with people whose preparation differed. Presenting the Tikal research and receiving second place in the 2023 AAG GISS Student Honor Paper Competition gave me confidence in my ability to contribute. Mentoring showed me another form of achievement: helping a colleague become able to contribute independently.</p><p>Being struck by a car as a pedestrian later changed how I understood transportation. Recovery made studying and navigating daily life more difficult during my master&#x27;s program. With support from my advisor and care providers, I continued my education and completed my degree at Berkeley. I also became more attentive to the distance between a route that exists on a map and a journey someone can actually undertake. I cannot generalize my experience to every traveler, but it changed the questions I ask and the assumptions I am willing to leave unexamined.</p><p>That perspective accompanied my research on airport emissions, safety, and urban perception. I wanted to understand how infrastructure distributes burdens and whose experience disappears when those burdens are averaged. These projects gave me analytical tools for questions that had become personally consequential. They also taught me that concern for a community is a starting point; useful work requires careful evidence and a willingness to revise an explanation.</p></section><section><h2>Emuser: turning frustration into a shared project</h2><p>Emuser grew from a different experience of that same distance between possibility and access. Our team recognized how much effort job seekers spend repeatedly translating their experiences into the language of a vacancy. The problem was not simply writing a stronger sentence. It was deciding which parts of a person&#x27;s background mattered, retaining the context behind them, and helping that person choose a next step. I helped shape an experience-first product concept and the interactions through which users could receive assistance while retaining control over their own story.</p><p>The work exposed practical obstacles that enthusiasm alone could not solve. A workflow needed to remain usable when information was missing or extraction failed. Automation needed room for review. A small team needed a scope it could sustain. The concrete outputs of this phase were product narratives, interface and workflow specifications, and a shared direction for development. The later roadmap gave us a framework for limiting expansion and asking for evidence before adding another service. Those documents are not proof of improved employment outcomes; they are a foundation on which such outcomes can be tested.</p><p>Emuser taught me to value the less visible work of making an idea usable: articulating a requirement, finding an ambiguity, documenting a fallback, and making a decision understandable to a teammate. It also sharpened my sense of responsibility when building AI systems. If a tool misrepresents a person&#x27;s experience, the person bears the consequence. In transportation, an unsuitable recommendation can likewise place the burden of a system&#x27;s assumptions on the traveler. This connection strengthened my desire to pursue a PhD in which human needs shape both the model and the standard used to evaluate it.</p></section><section><h2>What I will carry into doctoral life</h2><p>I will enter doctoral study with experience moving between research and product development, and with an understanding that progress depends on other people. I hope to contribute as a researcher who documents decisions, welcomes criticism, and makes room for students who are still learning how academic work happens. My first-generation experience and the support I received during recovery have made asking for help, and making help accessible, part of how I work.</p><p>My long-term path is to develop AI-assisted transportation tools whose value can be assessed in the lives of the people they are intended to serve. During the PhD, I want to produce reproducible studies, accessible explanations, and software that researchers and practitioners can inspect. I also want to continue mentoring students navigating unfamiliar academic environments. The thread connecting my education, recovery, research, and Emuser is a commitment to making opportunity usable. I want my doctoral work to advance that commitment through evidence, thoughtful collaboration, and practical contributions to more resilient urban transportation.</p></section></div>
+    </article></main>
+    <footer class="site-footer"><span>tongshi@berkeley.edu</span><span>(+1) 805-280-6424</span><a href="https://linkedin.com/in/stoneshiucb">LinkedIn</a><a href="https://github.com/camel-ai/oasis">OASIS</a></footer>
+    <script>
+      const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
+      document.querySelectorAll("nav a").forEach((item) => {
+        const itemPath = new URL(item.href).pathname.replace(/\/$/, "") || "/";
+        if (itemPath === currentPath) item.setAttribute("aria-current", "page");
+      });
+
+      const revealItems = document.querySelectorAll("main > section, .sample-card");
+      revealItems.forEach((item) => item.classList.add("reveal-target"));
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: "0px 0px -40px" });
+      revealItems.forEach((item) => revealObserver.observe(item));
+
+      const identity = document.querySelector(".identity-heading");
+      if (identity && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        const characters = [];
+        identity.querySelectorAll("[data-type]").forEach((part) => {
+          const text = part.textContent;
+          part.textContent = "";
+          for (const character of Array.from(text)) {
+            const span = document.createElement("span");
+            span.className = "typed-character";
+            span.textContent = character;
+            part.appendChild(span);
+            characters.push(span);
+          }
+        });
+        let index = 0;
+        const typeNext = () => {
+          if (index > 0) characters[index - 1].classList.remove("typing-cursor");
+          if (index < characters.length) {
+            characters[index].classList.add("is-typed", "typing-cursor");
+            index += 1;
+            window.setTimeout(typeNext, 45);
+          } else {
+            identity.classList.add("typing-complete");
+          }
+        };
+        typeNext();
+      }
+    </script>
+  </body>
+</html>

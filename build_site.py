@@ -55,6 +55,8 @@ def build():
         "cv/index.html": app.cv_page(),
         "cover-letter/index.html": app.cover_letter_page(),
         "research-proposal/index.html": app.research_proposal_page(),
+        "statement-of-purpose/index.html": app.application_page("sop", app.base),
+        "personal-statement/index.html": app.application_page("personal", app.base),
         "404.html": app.base("Page not found", '<h1>Page not found</h1><a href="/">Back to CV</a>'),
     }
     for sample in app.WORK_SAMPLES:

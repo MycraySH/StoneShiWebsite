@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Statement of Purpose | Tong (Stone) Shi</title>
+    <meta name="description" content="CV homepage for Tong (Stone) Shi, transportation engineering, GIS, and multi-agent mobility research.">
+    <link rel="stylesheet" href="/StoneShiWebsite/static/styles.css?v=fall2027">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand name-mark" href="/StoneShiWebsite/">Tong(Stone)Shi</a>
+      <nav aria-label="Primary navigation"><a href="/StoneShiWebsite/">CV</a> <a href="/StoneShiWebsite/cover-letter/">Cover Letter</a> <a href="/StoneShiWebsite/research-proposal/">Research Proposal</a> <a href="/StoneShiWebsite/statement-of-purpose/">Statement of Purpose</a> <a href="/StoneShiWebsite/personal-statement/">Personal Statement</a></nav>
+    </header>
+    <main><article class="document-page application-page">
+      <p class="eyebrow">Fall 2027 | Canadian PhD applications</p>
+      <h1>Statement of Purpose</h1>
+      <p class="lead">AI, accessibility, and urban transportation resilience</p>
+      <div class="button-row"><a class="button primary" href="/StoneShiWebsite/static/documents/Tong_Stone_Shi_Statement_of_Purpose_Fall_2027.pdf" download>Download PDF</a><a class="button secondary" href="/StoneShiWebsite/cv/">View research CV</a></div>
+      <div class="application-prose"><section><p>A transportation network can recover its connections while leaving some travelers without a usable journey. I want to understand that gap: how do infrastructure failures, environmental conditions, and individual mobility constraints interact to shape access during disruption, and when can AI improve the decisions that follow? For doctoral study in Canada beginning in Fall 2027, I propose to investigate accessibility-aware transportation resilience through geospatial analysis, constrained AI agents, and empirical evaluation. My aim is to develop tools that explain whose access is lost, how it recovers, and which interventions make recovery more equitable.</p><p>My preparation began with geographical information science at UC Santa Barbara and deepened through an M.S. in Civil and Environmental Engineering, with a transportation focus, at UC Berkeley. At UCSB, hydrological modeling and archaeological GIS taught me to construct spatial evidence from heterogeneous records. Managing a nine-person GIS team at the MesoAmerican Research Center also taught me to make analytical decisions explicit enough for others to reproduce. These experiences established a habit that remains central to my work: examine the assumptions behind a map before treating it as an explanation.</p></section><section><h2>From spatial exposure to individual decisions</h2><p>At Berkeley&#x27;s Institute of Transportation Studies, I investigated emissions and socioeconomic exposure around 66 California airports. In a separate Caltrans and NEXTOR III project, I analyzed accident locations and safety-zone geometries across 259 airports. These studies sharpened my interest in the distribution of transportation burdens and in translating spatial analysis into planning evidence. At HuMNet Lab, work with Google Street View imagery and PyTorch-based urban perception modeling extended that interest to street-level experience across more than 90,000 road segments in Bogota. Together, these projects moved my attention from where infrastructure is located to how its conditions affect the people who use it.</p><p>Applied AI work then made the problem of individual representation more concrete. At Ditto, I developed location recommendations using geospatial tools, routing information, and user preferences. A geographically convenient destination could still be unsuitable once transit access or a user&#x27;s constraints were considered. This experience strengthened my interest in models that distinguish an available option from a feasible and acceptable one.</p></section><section><h2>Emuser: making context actionable</h2><p>My work on Emuser extended this question from physical access to access to opportunity. Our team is developing a career-support tool around a reusable record of a person&#x27;s experiences, rather than requiring that person to reconstruct their background for every application. I contributed to product strategy and interaction design connecting this record to job-specific assistance. The team&#x27;s specifications cover different levels of automation, opportunities to review selected content, and a manual fallback when a job description cannot be extracted. Developing these workflows made me confront a recurring design problem: an AI recommendation is only useful when its representation of the person is adequate and its failure modes are manageable.</p><p>Emuser also exposed the difference between a persuasive output and a defensible evaluation. A polished application or a matching score does not establish that a system understood the user or improved an outcome. Our discussions about transparent matching criteria and the roadmap&#x27;s emphasis on verified facts and outcome tracking helped clarify the standard I want to bring to transportation AI. The transferable contribution is a way of framing decisions: preserve relevant context, distinguish requirements from preferences, expose the basis for a recommendation, and let people correct it. In my PhD, I want to test whether these principles improve mobility decisions under disruption.</p></section><section><h2>A bounded, testable doctoral agenda</h2><p>I would begin with one urban transit-and-walking network and a defined service-disruption scenario. The first task would be to build a reproducible network representation combining service information, pedestrian connections, and accessibility attributes. Street-view analysis could help identify candidate barriers, but those attributes would require validation against reliable inventories or targeted audits. Traveler profiles would represent explicit mobility requirements and preferences informed by suitable data and participant input; demographic categories alone would not stand in for an individual&#x27;s needs.</p><p>The second task would be to evaluate a constrained AI decision layer. A routing engine would generate feasible alternatives and enforce network and accessibility restrictions. An LLM could interpret stated preferences, explain trade-offs, or select among those alternatives, while unsupported recommendations would trigger a fallback. I would compare this approach with constraint-aware routing and conventional behavioral models under the same demand and disruption conditions. The central question is whether the AI component adds measurable value beyond the information and constraints already supplied to a simpler method.</p><p>Evaluation would connect individual outcomes to network recovery: completed essential trips, travel-time reliability, generalized travel cost, constraint violations, and the recovery of accessibility across traveler groups. I would examine sensitivity to missing data and profile assumptions, model variability, and computational cost. Held-out disruption cases and, where feasible, traveler or practitioner studies would help distinguish plausible explanations from credible behavioral performance. This staged design would support a defensible initial study before expansion to interacting hazards or larger networks.</p></section><section><h2>The researcher I intend to become</h2><p>I seek a Canadian doctoral environment that connects transportation engineering with spatial data science, human-centered AI, and collaboration with communities and practitioners. I want deeper training in behavioral modeling, experimental design, and uncertainty analysis so that my experience building systems becomes a foundation for research that can withstand comparison and replication. My intended contributions are a documented network and evaluation pipeline, evidence about when AI helps or fails, and an open-source prototype that others can examine and extend. Ultimately, I want to help cities judge recovery by whether people can reach the services and opportunities they need.</p></section></div>
+    </article></main>
+    <footer class="site-footer"><span>tongshi@berkeley.edu</span><span>(+1) 805-280-6424</span><a href="https://linkedin.com/in/stoneshiucb">LinkedIn</a><a href="https://github.com/camel-ai/oasis">OASIS</a></footer>
+    <script>
+      const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
+      document.querySelectorAll("nav a").forEach((item) => {
+        const itemPath = new URL(item.href).pathname.replace(/\/$/, "") || "/";
+        if (itemPath === currentPath) item.setAttribute("aria-current", "page");
+      });
+
+      const revealItems = document.querySelectorAll("main > section, .sample-card");
+      revealItems.forEach((item) => item.classList.add("reveal-target"));
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: "0px 0px -40px" });
+      revealItems.forEach((item) => revealObserver.observe(item));
+
+      const identity = document.querySelector(".identity-heading");
+      if (identity && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        const characters = [];
+        identity.querySelectorAll("[data-type]").forEach((part) => {
+          const text = part.textContent;
+          part.textContent = "";
+          for (const character of Array.from(text)) {
+            const span = document.createElement("span");
+            span.className = "typed-character";
+            span.textContent = character;
+            part.appendChild(span);
+            characters.push(span);
+          }
+        });
+        let index = 0;
+        const typeNext = () => {
+          if (index > 0) characters[index - 1].classList.remove("typing-cursor");
+          if (index < characters.length) {
+            characters[index].classList.add("is-typed", "typing-cursor");
+            index += 1;
+            window.setTimeout(typeNext, 45);
+          } else {
+            identity.classList.add("typing-complete");
+          }
+        };
+        typeNext();
+      }
+    </script>
+  </body>
+</html>

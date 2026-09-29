@@ -3,6 +3,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 import os
 from pathlib import Path
 from urllib.parse import unquote, urlparse
+from application_pages import application_page
 
 
 ROOT = Path(__file__).resolve().parent
@@ -112,7 +113,9 @@ def base(title, body):
     nav = (
         f'{link("CV", "/")} '
         f'{link("Cover Letter", "/cover-letter")} '
-        f'{link("Research Proposal", "/research-proposal")}'
+        f'{link("Research Proposal", "/research-proposal")} '
+        f'{link("Statement of Purpose", "/statement-of-purpose")} '
+        f'{link("Personal Statement", "/personal-statement")}'
     )
     footer = (
         f"<span>{PROFILE['email']}</span>"
@@ -127,7 +130,7 @@ def base(title, body):
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{escape(title)}</title>
     <meta name="description" content="CV homepage for Tong (Stone) Shi, transportation engineering, GIS, and multi-agent mobility research.">
-    <link rel="stylesheet" href="/static/styles.css?v=names19">
+    <link rel="stylesheet" href="/static/styles.css?v=fall2027">
   </head>
   <body>
     <header class="site-header">
@@ -224,6 +227,8 @@ def cv_page():
     <div class="button-row">
       <a class="button primary" href="/static/documents/research-cv.pdf" download>Download research CV</a>
       <a class="button secondary" href="/static/documents/transportation-gis-resume.pdf" download>Download transportation/GIS resume</a>
+      <a class="button secondary" href="/statement-of-purpose">Statement of purpose</a>
+      <a class="button secondary" href="/personal-statement">Personal statement</a>
     </div>
   </div>
   <aside class="profile-panel" aria-label="Profile">
@@ -275,6 +280,10 @@ def home_page():
 
 
 def latex_cv_section():
+    return (ROOT / "cv_fragment.html").read_text(encoding="utf-8")
+
+
+def legacy_latex_cv_section():
     return """
 <section class="latex-cv" aria-label="LaTeX formatted CV">
   <div class="latex-paper">
@@ -524,6 +533,10 @@ class PortfolioHandler(SimpleHTTPRequestHandler):
             return self.send_html(cover_letter_page())
         if path == "/research-proposal":
             return self.send_html(research_proposal_page())
+        if path == "/statement-of-purpose":
+            return self.send_html(application_page("sop", base))
+        if path == "/personal-statement":
+            return self.send_html(application_page("personal", base))
         if path.startswith("/work/"):
             html = work_page(path.removeprefix("/work/"))
             if html:
