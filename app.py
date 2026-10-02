@@ -229,6 +229,8 @@ def cv_page():
       <a class="button secondary" href="/static/documents/transportation-gis-resume.pdf" download>Download transportation/GIS resume</a>
       <a class="button secondary" href="/statement-of-purpose">Statement of purpose</a>
       <a class="button secondary" href="/personal-statement">Personal statement</a>
+      <a class="button secondary" href="/static/documents/史桐_高校申请学术简历_简体中文.pdf" download>Download Chinese academic CV PDF</a>
+      <a class="button secondary" href="/static/documents/史桐_高校申请学术简历_简体中文.docx" download>Download Chinese academic CV Word</a>
     </div>
   </div>
   <aside class="profile-panel" aria-label="Profile">
