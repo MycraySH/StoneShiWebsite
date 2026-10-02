@@ -52,6 +52,7 @@ class PagesHTML(HTMLParser):
 def build():
     pages = {
         "index.html": app.home_page(),
+        "zh/index.html": app.chinese_home_page(),
         "cv/index.html": app.cv_page(),
         "cover-letter/index.html": app.cover_letter_page(),
         "research-proposal/index.html": app.research_proposal_page(),
